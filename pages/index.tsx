@@ -19,7 +19,7 @@ export default function Home({bio}: HomeProps) {
       </Head>
       <Navbar />
       <main>
-        <h1>Hi, I'm Stephen</h1>
+        <h1>Hi, I&apos;m Stephen</h1>
         <p>{bio}</p>
       </main>
       <Footer />

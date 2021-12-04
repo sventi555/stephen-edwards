@@ -8,5 +8,5 @@ export default function Navbar() {
       <Link href='/music'>Music</Link>
       <Link href='/contact'>Contact</Link>
     </nav>
-  )
+  );
 }
