@@ -1,5 +1,5 @@
 interface MainProps {
-  children: JSX.Element[] | JSX.Element;
+  children: JSX.Element[] | JSX.Element
 }
 
 export default function Main(props: MainProps) {

@@ -1,16 +1,13 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-import moment from 'moment';
 import Head from 'next/head';
+import showdown from 'showdown';
 import YAML from 'yaml';
 
-import Footer from '../../components/footer';
+import Container from '../../components/container';
 import P5Sketch from '../../components/p5-sketch';
-import Main from '../../components/main';
-import Navbar from '../../components/navbar';
 
-// TODO change date type to specifically a moment.js string
 interface GraphicProps {
   slug: string,
   title: string,
@@ -20,24 +17,21 @@ interface GraphicProps {
   date: string
 }
 
-// TODO turn markdown into html
 export default function Graphic(props: GraphicProps) {
+  const converter = new showdown.Converter();
+
   return (
     <div>
       <Head>
         <title>Stephen Edwards</title>
       </Head>
-      <Navbar />
-      <Main>
+      <Container pageName='graphics'>
         <h1>{props.title}</h1>
-        <div className='space-y-3 md:flex md:flex-wrap md:space-x-5 md:space-y-0'>
+        <div className='space-y-3 md:flex md:flex-wrap md:space-y-0 md:space-x-5'>
           <P5Sketch url={props.url}/>
-          <div>
-            <p>{props.description}</p>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(props.description) }} />
         </div>
-      </Main>
-      <Footer />
+      </Container>
     </div>
   );
 }

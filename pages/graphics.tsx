@@ -5,11 +5,8 @@ import moment from 'moment';
 import Head from 'next/head';
 import YAML from 'yaml';
 
-import Footer from '../components/footer';
-import Main from '../components/main';
-import Navbar from '../components/navbar';
+import Container from '../components/container';
 
-// TODO change date type to specifically a moment.js string
 interface Sketch {
   slug: string,
   title: string,
@@ -28,12 +25,11 @@ export default function Graphics({ sketches }: GraphicsProps) {
       <Head>
         <title>Stephen Edwards</title>
       </Head>
-      <Navbar />
-      <Main>
+      <Container pageName='graphics'>
         <h1>Drawings and Animations</h1>
         <div>
           {sketches.map((sketch) => (
-            <a key={sketch.slug} className='flex p-2 space-x-5 items-center border-2 rounded hover:border-gray-400 transition-all' href={`graphics/${sketch.slug}`}>
+            <a key={sketch.slug} className='flex items-center p-2 space-x-5 transition-all border-2 border-gray-100 rounded hover:border-gray-400' href={`graphics/${sketch.slug}`}>
               <img className='w-56' src={sketch.screenshot}></img>
               <div className='space-y-3'>
                 <h3><i>{sketch.title}</i></h3>
@@ -42,8 +38,7 @@ export default function Graphics({ sketches }: GraphicsProps) {
             </a>
           ))}
         </div>
-      </Main>
-      <Footer />
+      </Container>
     </div>
   );
 }

@@ -2,29 +2,26 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 import Head from 'next/head';
+import showdown from 'showdown';
 import YAML from 'yaml';
 
-import Footer from '../components/footer';
-import Main from '../components/main';
-import Navbar from '../components/navbar';
+import Container from '../components/container';
 
 interface HomeProps {
   bio: string
 }
 
-// TODO turn markdown into html
 export default function Home({ bio }: HomeProps) {
+  const converter = new showdown.Converter();
   return (
     <div>
       <Head>
         <title>Stephen Edwards</title>
       </Head>
-      <Navbar />
-      <Main>
+      <Container pageName='home'>
         <h1>Hi, I&apos;m Stephen</h1>
-        <p>{bio}</p>
-      </Main>
-      <Footer />
+        <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(bio) }} />
+      </Container>
     </div>
   );
 }

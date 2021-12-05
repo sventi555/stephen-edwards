@@ -1,12 +1,18 @@
 import Link from 'next/link';
 
-export default function Navbar() {
+interface NavbarProps {
+  pageName: string
+}
+
+// TODO make pageName an enum
+
+export default function Navbar({ pageName }: NavbarProps) {
   return (
-    <nav className='flex space-x-10 p-5'>
-      <Link href='/'>Home</Link>
-      <Link href='/graphics'>Graphics</Link>
-      <Link href='/music'>Music</Link>
-      <Link href='/contact'>Contact</Link>
+    <nav className='flex p-5 space-x-10'>
+      <Link href='/'><a className={pageName === 'home' ? 'font-bold' : ''}>Home</a></Link>
+      <Link href='/graphics'><a className={pageName === 'graphics' ? 'font-bold' : ''}>Graphics</a></Link>
+      <Link href='/music'><a className={pageName === 'music' ? 'font-bold' : ''}>Music</a></Link>
+      <Link href='/contact'><a className={pageName === 'contact' ? 'font-bold' : ''}>Contact</a></Link>
     </nav>
   );
 }
