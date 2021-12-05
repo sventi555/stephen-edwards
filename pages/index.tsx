@@ -11,7 +11,7 @@ interface HomeProps {
   bio: string
 }
 
-export default function Home({bio}: HomeProps) {
+export default function Home({ bio }: HomeProps) {
   return (
     <div>
       <Head>
@@ -28,7 +28,11 @@ export default function Home({bio}: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const homeData = YAML.parse(await fs.readFile(path.join(process.cwd(), '_site/pages/home.yml'), 'utf8'));
+  const homeData = YAML.parse(
+    await fs.readFile(
+      path.join(process.cwd(), '_site/pages/home.yml'),
+      'utf8'
+    ));
 
   return {
     props: homeData

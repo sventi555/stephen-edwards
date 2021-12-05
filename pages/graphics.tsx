@@ -20,7 +20,7 @@ interface GraphicsProps {
   sketches: [Sketch]
 }
 
-export default function Graphics({sketches}: GraphicsProps) {
+export default function Graphics({ sketches }: GraphicsProps) {
   return (
     <div>
       <Head>
@@ -45,8 +45,12 @@ export async function getStaticProps() {
 
   const sketchDir = await fs.readdir(path.join(process.cwd(), '_site/sketches/'));
   for (const sketchPath of sketchDir) {
-    const sketchData = YAML.parse(await fs.readFile(path.join(process.cwd(), `_site/sketches/${sketchPath}`), 'utf8'));
-    sketches.push({...sketchData, slug: sketchPath});
+    const sketchData = YAML.parse(
+      await fs.readFile(
+        path.join(process.cwd(), `_site/sketches/${sketchPath}`),
+        'utf8'
+      ));
+    sketches.push({ ...sketchData, slug: sketchPath });
   }
 
   return {

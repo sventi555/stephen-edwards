@@ -24,6 +24,7 @@
     "quotes": ["error", "single"],
     "semi": "error",
     "arrow-spacing": "error",
+    "object-curly-spacing": ["error", "always"],
     "no-var": "error",
     "prefer-const": "error",
     "no-console": "error",
