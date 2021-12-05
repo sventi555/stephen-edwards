@@ -3,6 +3,7 @@ backend:
   branch: main
 
 media_folder: "public/media"
+public_folder: "/media"
 
 collections:
   - name: "pages"
@@ -21,6 +22,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: string}
-      - {label: "iframe URL", name: "iframe-url", widget: string}
+      - {label: "Description", name: "description", widget: markdown}
+      - {label: "iframe URL", name: "url", widget: string}
       - {label: "Screenshot", name: "screenshot", widget: image}
       - {label: "Date", name: "date", widget: datetime}

@@ -5,12 +5,14 @@ import Head from 'next/head';
 import YAML from 'yaml';
 
 import Footer from '../components/footer';
+import Main from '../components/main';
 import Navbar from '../components/navbar';
 
 interface HomeProps {
   bio: string
 }
 
+// TODO turn markdown into html
 export default function Home({ bio }: HomeProps) {
   return (
     <div>
@@ -18,10 +20,10 @@ export default function Home({ bio }: HomeProps) {
         <title>Stephen Edwards</title>
       </Head>
       <Navbar />
-      <main>
+      <Main>
         <h1>Hi, I&apos;m Stephen</h1>
         <p>{bio}</p>
-      </main>
+      </Main>
       <Footer />
     </div>
   );
