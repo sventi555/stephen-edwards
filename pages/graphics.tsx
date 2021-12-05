@@ -31,6 +31,7 @@ export default function Graphics({sketches}: GraphicsProps) {
         {sketches.map((sketch) => (
           <div key={sketch.slug}>
             <p>{sketch.title}</p>
+            <iframe src={sketch['iframe-url']}></iframe>
           </div>
         ))}
       </main>
