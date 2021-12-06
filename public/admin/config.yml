@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "_site/pages/hello.yml"
+        file: "_site/pages/home.yml"
         fields:
         - {label: Bio, name: bio, widget: markdown}
   - name: "sketches"
