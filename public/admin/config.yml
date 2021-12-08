@@ -24,6 +24,7 @@ collections:
         - {label: Phone, name: phone, widget: string}
         - label: Insta
           name: insta
+          widget: object
           fields:
             - label: Link
               name: link
@@ -33,6 +34,7 @@ collections:
               widget: string
         - label: LinkedIn
           name: linkedin
+          widget: object
           fields:
             - label: Link
               name: link
