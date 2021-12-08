@@ -56,6 +56,8 @@ export async function getStaticProps() {
     sketches.push({ ...sketchData, slug: sketchPath.substring(0, sketchPath.length - 4) });
   }
 
+  sketches.reverse();
+
   return {
     props: { sketches }
   };

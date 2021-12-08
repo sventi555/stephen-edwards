@@ -14,6 +14,41 @@ collections:
         file: "_site/pages/home.yml"
         fields:
         - {label: Bio, name: bio, widget: markdown}
+      - label: "Contact"
+        name: "contact"
+        create: true
+        file: "_site/pages/contact.yml"
+        fields:
+        - {label: Blurb, name: blurb, widget: markdown}
+        - {label: Email, name: email, widget: string}
+        - {label: Phone, name: phone, widget: string}
+        - label: Insta
+          name: insta
+          fields:
+            - label: Link
+              name: link
+              widget: string
+            - label: Username
+              name: username
+              widget: string
+        - label: LinkedIn
+          name: linkedin
+          fields:
+            - label: Link
+              name: link
+              widget: string
+            - label: Username
+              name: username
+              widget: string
+        - label: GitHub
+          name: github
+          fields:
+            - label: Link
+              name: link
+              widget: string
+            - label: Username
+              name: username
+              widget: string
   - name: "sketches"
     label: "Sketches"
     folder: "_site/sketches"
