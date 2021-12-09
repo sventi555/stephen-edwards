@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export default function Navbar({ pageName }: NavbarProps) {
   return (
-    <nav className='flex p-5 space-x-10'>
+    <nav className='flex p-5 space-x-10 text-white bg-coolGray-700'>
       <Link href='/'><a className={pageName === 'home' ? 'font-bold' : ''}>Home</a></Link>
       <Link href='/graphics'><a className={pageName === 'graphics' ? 'font-bold' : ''}>Graphics</a></Link>
       {/* <Link href='/music'><a className={pageName === 'music' ? 'font-bold' : ''}>Music</a></Link> */}

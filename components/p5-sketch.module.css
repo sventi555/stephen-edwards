@@ -1,4 +1,4 @@
 .sketch {
-  width: 32rem;
-  height: 32rem;
+  min-width: 32rem;
+  min-height: 32rem;
 }

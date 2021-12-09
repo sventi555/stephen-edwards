@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import showdown from 'showdown';
 import YAML from 'yaml';
 
@@ -18,7 +19,13 @@ interface GraphicProps {
 }
 
 export default function Graphic(props: GraphicProps) {
+  const router = useRouter();
+
   const converter = new showdown.Converter();
+
+  function goBack(e) {
+    router.back();
+  }
 
   return (
     <div>
@@ -26,8 +33,9 @@ export default function Graphic(props: GraphicProps) {
         <title>Stephen Edwards</title>
       </Head>
       <Container pageName='graphics'>
+        <button className='mb-4 underline' onClick={goBack}>&#8592; Back</button>
         <h1>{props.title}</h1>
-        <div className='space-y-3 md:flex md:flex-wrap md:space-y-0 md:space-x-5'>
+        <div className='space-y-3 lg:flex lg:space-y-0 lg:space-x-5'>
           <P5Sketch url={props.url}/>
           <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(props.description) }} />
         </div>

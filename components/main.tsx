@@ -4,7 +4,7 @@ interface MainProps {
 
 export default function Main(props: MainProps) {
   return (
-    <main className='p-5'>
+    <main className='pr-10 p-7'>
       {props.children}
     </main>
   );

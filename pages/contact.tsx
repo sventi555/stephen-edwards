@@ -11,9 +11,18 @@ interface ContactProps {
   blurb: string,
   email: string,
   phone: string,
-  insta: string,
-  linkedin: string,
-  github: string
+  insta: {
+    link: string,
+    username: string
+  },
+  linkedin: {
+    link: string,
+    username: string
+  },
+  github: {
+    link: string,
+    username: string
+  }
 }
 
 export default function Contact(props: ContactProps) {
@@ -25,21 +34,33 @@ export default function Contact(props: ContactProps) {
       </Head>
       <Container pageName='contact'>
         <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(props.blurb) }} />
-        <p>Email: <a href={'mailto:' + props.email}>{props.email}</a></p>
-        <p>Instagram: <a href={props.insta}>{props.insta}</a></p>
+        <div className='p-5'>
+          <p>Email: <a className='italic underline' href={'mailto:' + props.email}>
+            {props.email}
+          </a></p>
+          <p>Instagram: <a className='italic underline' href={props.insta.link} target='_blank' rel="noreferrer">
+            {props.insta.username}
+          </a></p>
+          <p>LinkedIn: <a className='italic underline' href={props.linkedin.link} target='_blank' rel="noreferrer">
+            {props.linkedin.username}
+          </a></p>
+          <p>GitHub: <a className='italic underline' href={props.github.link} target='_blank' rel="noreferrer">
+            {props.github.username}
+          </a></p>
+        </div>
       </Container>
     </div>
   );
 }
 
-// export async function getStaticProps() {
-//   const contactData = YAML.parse(
-//     await fs.readFile(
-//       path.join(process.cwd(), '_site/pages/contact.yml'),
-//       'utf8'
-//     ));
+export async function getStaticProps() {
+  const contactData = YAML.parse(
+    await fs.readFile(
+      path.join(process.cwd(), '_site/pages/contact.yml'),
+      'utf8'
+    ));
 
-//   return {
-//     props: contactData
-//   };
-// }
+  return {
+    props: contactData
+  };
+}
