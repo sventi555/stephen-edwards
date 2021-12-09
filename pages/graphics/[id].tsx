@@ -23,7 +23,7 @@ export default function Graphic(props: GraphicProps) {
 
   const converter = new showdown.Converter();
 
-  function goBack(e) {
+  function goBack() {
     router.back();
   }
 
