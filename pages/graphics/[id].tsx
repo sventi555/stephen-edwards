@@ -35,9 +35,9 @@ export default function Graphic(props: GraphicProps) {
       <Container pageName='graphics'>
         <button className='mb-4 underline' onClick={goBack}>&#8592; Back</button>
         <h1>{props.title}</h1>
-        <div className='space-y-3 lg:flex lg:space-y-0 lg:space-x-5'>
+        <div className='space-y-5 lg:flex lg:space-y-0 lg:space-x-5'>
           <P5Sketch url={props.url}/>
-          <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(props.description) }} />
+          <div className='markdown' dangerouslySetInnerHTML={{ __html: converter.makeHtml(props.description) }} />
         </div>
       </Container>
     </div>

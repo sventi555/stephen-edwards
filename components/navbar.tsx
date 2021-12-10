@@ -1,18 +1,36 @@
 import Link from 'next/link';
 
+interface NavlinkProps {
+  pageName: string,
+  curPageName: string,
+  link: string,
+  label: string
+}
+
 interface NavbarProps {
   pageName: string
 }
 
 // TODO make pageName an enum
 
+function Navlink({ pageName, curPageName, link, label }: NavlinkProps) {
+  return (
+    <Link href={link}>
+      <a className={(curPageName === pageName ? 'font-bold' : '')}>
+        {label}
+      </a>
+    </Link>
+  );
+}
+
 export default function Navbar({ pageName }: NavbarProps) {
   return (
-    <nav className='flex p-5 space-x-10 text-white bg-coolGray-700'>
-      <Link href='/'><a className={pageName === 'home' ? 'font-bold' : ''}>Home</a></Link>
-      <Link href='/graphics'><a className={pageName === 'graphics' ? 'font-bold' : ''}>Graphics</a></Link>
-      {/* <Link href='/music'><a className={pageName === 'music' ? 'font-bold' : ''}>Music</a></Link> */}
-      <Link href='/contact'><a className={pageName === 'contact' ? 'font-bold' : ''}>Contact</a></Link>
-    </nav>
+    <div className='flex p-5 space-x-10 text-white bg-coolGray-700'>
+      <nav className='flex space-x-10'>
+        <Navlink curPageName={pageName} pageName='home' link='/' label='Home' />
+        <Navlink curPageName={pageName} pageName='graphics' link='/graphics' label='Graphics' />
+        <Navlink curPageName={pageName} pageName='contact' link='contact' label='Contact' />
+      </nav>
+    </div>
   );
 }
