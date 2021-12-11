@@ -61,6 +61,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: string}
       - {label: "Description", name: "description", widget: markdown}
-      - {label: "iframe URL", name: "url", widget: string}
+      - {label: "Gif", name: "gif", widget: image, required: false}
+      - {label: "iframe URL", name: "iframeUrl", widget: string, required: false}
       - {label: "Screenshot", name: "screenshot", widget: image}
       - {label: "Date", name: "date", widget: datetime}

@@ -1,10 +1,10 @@
 .sketch {
   width: 100%;
-  min-height: 32rem;
+  height: 32rem;
 }
 
 @media (min-width: 640px) {
   .sketch {
-    min-width: 32rem;
+    width: 32rem;
   }
 }

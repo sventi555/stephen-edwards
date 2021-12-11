@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
+import _ from 'lodash';
 import moment from 'moment';
 import Head from 'next/head';
 import YAML from 'yaml';
@@ -10,7 +11,6 @@ import Container from '../components/container';
 interface Sketch {
   slug: string,
   title: string,
-  url: string,
   screenshot: string,
   date: string
 }
@@ -53,7 +53,10 @@ export async function getStaticProps() {
         path.join(process.cwd(), `_site/sketches/${sketchPath}`),
         'utf8'
       ));
-    sketches.push({ ...sketchData, slug: sketchPath.substring(0, sketchPath.length - 4) });
+    sketches.push({
+      ..._.pick(sketchData, ['title', 'screenshot', 'date']),
+      slug: sketchPath.substring(0, sketchPath.length - 4)
+    });
   }
 
   sketches.reverse();

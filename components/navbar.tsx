@@ -29,7 +29,7 @@ export default function Navbar({ pageName }: NavbarProps) {
       <nav className='flex space-x-10'>
         <Navlink curPageName={pageName} pageName='home' link='/' label='Home' />
         <Navlink curPageName={pageName} pageName='graphics' link='/graphics' label='Graphics' />
-        <Navlink curPageName={pageName} pageName='contact' link='contact' label='Contact' />
+        <Navlink curPageName={pageName} pageName='contact' link='/contact' label='Contact' />
       </nav>
     </div>
   );
