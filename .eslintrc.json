@@ -1,6 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
+    "@next/next/no-img-element": "off",
     "indent": ["error", 2],
     "no-trailing-spaces": "error",
     "quotes": ["error", "single"],

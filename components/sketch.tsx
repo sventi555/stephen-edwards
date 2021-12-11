@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import styles from './sketch.module.css';
 
 interface GifSketchProps {
@@ -8,7 +6,7 @@ interface GifSketchProps {
 
 function GifSketch({ gif }: GifSketchProps) {
   return (
-    <Image className='w-full' src={gif} alt='sketch' />
+    <img className='w-full' src={gif} alt='sketch' />
   );
 }
 
