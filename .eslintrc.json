@@ -1,28 +1,5 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "env": {
-    "node": true,
-    "browser": true,
-    "es6": true
-  },
+  "extends": "next/core-web-vitals",
   "rules": {
     "indent": ["error", 2],
     "no-trailing-spaces": "error",
@@ -35,6 +12,5 @@
     "no-console": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off"
-  },
-  "ignorePatterns": ["/node_modules", "/out", "/.next"]
+  }
 }

@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 import Head from 'next/head';
+import Script from 'next/script';
 import showdown from 'showdown';
 import YAML from 'yaml';
 
@@ -22,6 +23,7 @@ export default function Home({ bio }: HomeProps) {
         <h1>Hi, I&apos;m Stephen</h1>
         <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(bio) }} />
       </Container>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
     </div>
   );
 }

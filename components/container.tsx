@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Footer from './footer';
 import Main from './main';
 import Navbar from './navbar';
@@ -15,7 +17,7 @@ export default function Container(props: ContainerProps) {
         {props.children}
       </Main>
       <Footer />
-      <img className='fixed w-20 bottom-2 right-2' src='/static/images/pigeon.png' />
+      <Image className='fixed w-20 bottom-2 right-2' src='/static/images/pigeon.png' alt='pigeon' />
     </div>
   );
 }

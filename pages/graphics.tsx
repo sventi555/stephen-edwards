@@ -3,6 +3,7 @@ import path from 'path';
 
 import _ from 'lodash';
 import moment from 'moment';
+import Image from 'next/image';
 import Head from 'next/head';
 import YAML from 'yaml';
 
@@ -30,7 +31,7 @@ export default function Graphics({ sketches }: GraphicsProps) {
         <div>
           {sketches.map((sketch) => (
             <a key={sketch.slug} className='flex items-center p-2 space-x-5 transition-all border-2 border-gray-100 rounded hover:border-gray-400' href={`graphics/${sketch.slug}`}>
-              <img className='w-2/5 sm:w-56' src={sketch.screenshot}></img>
+              <Image className='w-2/5 sm:w-56' src={sketch.screenshot} alt={'Thumbnail of ' + sketch.title + ' sketch'}></Image>
               <div className='space-y-3'>
                 <h3><i>{sketch.title}</i></h3>
                 <p>{moment(sketch.date).format('MMMM Do YYYY')}</p>
