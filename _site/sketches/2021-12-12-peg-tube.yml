@@ -1,0 +1,9 @@
+title: Peg Tube
+description: This is my attempt to reverse engineer an animation originally
+  created by Etienne Jacob (<https://bleuje.github.io/>). It utilizes what
+  Etienne calls "the replacement method", where one geometry instance seamlessly
+  replaces another to create a perfectly repeating loop. I'll definitely be
+  practicing this technique in the near future.
+gif: /media/peg-tube.gif
+screenshot: /media/peg-tube.png
+date: 2021-12-11T23:51:27.696Z
