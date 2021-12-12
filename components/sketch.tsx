@@ -6,7 +6,7 @@ interface GifSketchProps {
 
 function GifSketch({ gif }: GifSketchProps) {
   return (
-    <img className='w-full' src={gif} alt='sketch' />
+    <div className={`${styles.sketch}`}><img className='w-full' src={gif} alt='sketch' /></div>
   );
 }
 
@@ -16,7 +16,7 @@ interface P5SketchProps {
 
 function P5Sketch(props: P5SketchProps) {
   return (
-    <iframe className={styles.sketch} src={props.iframeUrl}></iframe>
+    <iframe className={`${styles.sketch} ${styles.p5Sketch}`} src={props.iframeUrl}></iframe>
   );
 }
 
@@ -25,16 +25,8 @@ interface SketchProps {
   iframeUrl?: string,
 }
 
-function chooseSketch({ gif, iframeUrl }: SketchProps) {
+export default function Sketch({ gif, iframeUrl }: SketchProps) {
   if (gif) return <GifSketch gif={gif} />;
   else if (iframeUrl) return <P5Sketch iframeUrl={iframeUrl} />;
   else return <p>Sketch not found.</p>;
-}
-
-export default function Sketch({ gif, iframeUrl }: SketchProps) {
-  return (
-    <div className={styles.sketch}>
-      {chooseSketch({ gif, iframeUrl })}
-    </div>
-  );
 }
