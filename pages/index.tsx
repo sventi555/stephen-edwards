@@ -20,8 +20,10 @@ export default function Home({ bio }: HomeProps) {
         <title>Stephen Edwards</title>
       </Head>
       <Container pageName='home'>
-        <h1>Hi, I&apos;m Stephen</h1>
-        <div dangerouslySetInnerHTML={{ __html: converter.makeHtml(bio) }} />
+        <div className='flex flex-col justify-center flex-grow'>
+          <h1 className='text-center'>Hi, I&apos;m Stephen</h1>
+          <div className='text-center' dangerouslySetInnerHTML={{ __html: converter.makeHtml(bio) }} />
+        </div>
       </Container>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></Script>
     </div>

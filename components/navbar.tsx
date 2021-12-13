@@ -25,7 +25,7 @@ function Navlink({ pageName, curPageName, link, label }: NavlinkProps) {
 
 export default function Navbar({ pageName }: NavbarProps) {
   return (
-    <div className='flex p-5 space-x-10 text-white bg-coolGray-700'>
+    <div className='flex p-5 space-x-10 text-light bg-primary'>
       <nav className='flex space-x-10'>
         <Navlink curPageName={pageName} pageName='home' link='/' label='Home' />
         <Navlink curPageName={pageName} pageName='graphics' link='/graphics' label='Graphics' />

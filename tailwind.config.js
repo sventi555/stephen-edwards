@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -8,7 +7,9 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      'teal': '#5396AF'
+      'primary': '#0D1217',
+      'light': '#EEEEEE',
+      'dull': '#A3A3A3'
     },
     extend: {},
   },

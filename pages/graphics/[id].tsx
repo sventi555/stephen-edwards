@@ -34,7 +34,7 @@ export default function Graphic(props: GraphicProps) {
         <title>Stephen Edwards</title>
       </Head>
       <Container pageName='graphics'>
-        <button className='mb-4 underline' onClick={goBack}>&#8592; Back</button>
+        <div><button className='inline-block mb-4 underline' onClick={goBack}>&#8592; Back</button></div>
         <h1>{props.title}</h1>
         <div className='space-y-5 lg:flex lg:space-y-0 lg:space-x-5'>
           <Sketch gif={props.gif} iframeUrl={props.iframeUrl}/>
