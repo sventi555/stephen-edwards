@@ -5,6 +5,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import YAML from 'yaml';
 
 import Container from '../components/container';
@@ -30,15 +31,17 @@ export default function Graphics({ sketches }: GraphicsProps) {
         <h1>Drawings and Animations</h1>
         <div className='flex flex-col space-y-2'>
           {sketches.map((sketch) => (
-            <a key={sketch.slug} className='flex items-center p-2 space-x-5 transition-all border-2 border-gray-800 rounded hover:border-gray-500' href={`graphics/${sketch.slug}`}>
-              <div className='w-2/5 sm:w-56'>
-                <Image layout='responsive' width='200' height='200' src={sketch.screenshot} alt={'Thumbnail of ' + sketch.title + ' sketch'} />
-              </div>
-              <div className='space-y-3'>
-                <h3><i>{sketch.title}</i></h3>
-                <p>{moment(sketch.date).format('MMMM Do YYYY')}</p>
-              </div>
-            </a>
+            <Link key={sketch.slug} href={`graphics/${sketch.slug}`}>
+              <a className='flex items-center p-2 space-x-5 transition-all border-2 border-gray-800 rounded hover:border-gray-500'>
+                <div className='w-2/5 sm:w-56'>
+                  <Image layout='responsive' width='200' height='200' src={sketch.screenshot} alt={'Thumbnail of ' + sketch.title + ' sketch'} />
+                </div>
+                <div className='space-y-3'>
+                  <h3><i>{sketch.title}</i></h3>
+                  <p>{moment(sketch.date).format('MMMM Do YYYY')}</p>
+                </div>
+              </a>
+            </Link>
           ))}
         </div>
       </Container>
