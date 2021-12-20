@@ -1,5 +1,23 @@
 title: Refletch n' Sketch
-description: My cousin told me to reflect some lines. Here they are.
+description: >-
+  Drag the mouse across the canvas to draw something that gets reflected around
+  a rotational axis.
+
+
+
+
+  **Controls:**
+
+
+  * Click the box in the bottom left corner to open a colour picker where you can select a colour to draw with.
+
+  * Move the slider to change the number of reflections.
+
+  * Check/uncheck the box labelled "trippy" to get a rainbow pencil.
+
+  * Press "Spacebar" to clear the canvas.
+
+  * Press "s" to download your masterpiece.
 iframeUrl: https://editor.p5js.org/sventi555/full/CFufuVJ1K
 screenshot: /media/refletch-n-sketch.png
 date: 2021-12-14T02:13:15.671Z
