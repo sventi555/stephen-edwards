@@ -19,6 +19,10 @@ h3 {
   @apply text-2xl;
 }
 
-.markdown > p{
+.markdown > p {
   @apply mb-5;
+}
+
+.markdown > ul {
+  @apply list-disc ml-5;
 }
