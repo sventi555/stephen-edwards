@@ -1,0 +1,11 @@
+title: Recursive Sliding Puzzle
+description: This is yet another attempt to reverse engineer an animation
+  originally created by Etienne Jacob (<https://bleuje.github.io/>). You may be
+  familiar with [sliding puzzles](https://en.wikipedia.org/wiki/Sliding_puzzle),
+  where you slide tiles around to reach some predetermined end state. Now,
+  imagine if each tile was itself a sliding puzzle. This animation depicts that
+  scenario. Enjoy.
+gif: ""
+iframeUrl: https://editor.p5js.org/sventi555/full/Q1HTyIghT
+screenshot: /media/sliding-puzzle.png
+date: 2021-12-23T07:07:01.923Z
