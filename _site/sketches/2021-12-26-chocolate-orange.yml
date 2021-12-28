@@ -8,6 +8,8 @@ description: >-
 
 
   * Drag anywhere in the canvas to move the camera around.
+
+  * Move the slider to change the number of slices.
 iframeUrl: https://editor.p5js.org/sventi555/full/C139RDgij
 screenshot: /media/chocolate-orange.png
 date: 2021-12-26T21:27:16.202Z
